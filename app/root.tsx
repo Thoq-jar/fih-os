@@ -11,6 +11,7 @@ import type { Route } from "./+types/root";
 import "./app.css";
 
 export const links: Route.LinksFunction = () => [
+  { rel: "preload", href: "/wallpaper.png", as: "image" },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",
@@ -23,6 +24,9 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
+import { BootScreen } from "./components/BootScreen";
+import "./components/BootScreen.css";
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -33,6 +37,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+        <BootScreen />
         {children}
         <ScrollRestoration />
         <Scripts />

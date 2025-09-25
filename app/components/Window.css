@@ -1,0 +1,29 @@
+@keyframes fly-in {
+  0% {
+    transform: translateY(100vh) translateX(50vw) scale(0.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.window {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 20px;
+  margin: 20px;
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  animation: fly-in 0.5s ease-out forwards;
+  transition: border-color 0.3s ease;
+}
+
+.window:hover {
+  border-color: rgb(204, 49, 204);
+}

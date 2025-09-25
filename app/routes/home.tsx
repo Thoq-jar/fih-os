@@ -5,10 +5,15 @@ export default function Home() {
     <div style={{
       width: '100vw',
       height: '100vh',
-      backgroundImage: `url('https://cataas.com/cat')`,
       backgroundSize: 'cover',
     }}>
-      <div style={{backgroundColor: 'rgba(0, 0, 0, 0.75)'}}>
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+      }}>
         <TilingWindowManager />
       </div>
     </div>

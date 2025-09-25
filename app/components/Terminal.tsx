@@ -18,10 +18,17 @@ const Terminal: React.FC = () => {
         const info = await nekofetch();
         setOutput([
           ...output,
-          <div>
-            <p>Browser: {info.browser}</p>
-            <p>CPU: {info.cpu}</p>
-            <img src={info.cat} alt="cat" width="200" />
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <img src={info.cat} alt="cat" width="200" style={{ marginRight: '20px' }} />
+            <div>
+              <p><span style={{ color: '#a855f7' }}>OS:</span> <span style={{ color: 'white' }}>{info.os}</span></p>
+              <p><span style={{ color: '#a855f7' }}>Browser:</span> <span style={{ color: 'white' }}>{info.browser}</span></p>
+              <p><span style={{ color: '#a855f7' }}>CPU:</span> <span style={{ color: 'white' }}>{info.cpu}</span></p>
+              <p><span style={{ color: '#a855f7' }}>GPU:</span> <span style={{ color: 'white' }}>{info.gpu}</span></p>
+              <p><span style={{ color: '#a855f7' }}>RAM:</span> <span style={{ color: 'white' }}>{info.ram}</span></p>
+              <p><span style={{ color: '#a855f7' }}>Resolution:</span> <span style={{ color: 'white' }}>{info.resolution}</span></p>
+              <p><span style={{ color: '#a855f7' }}>Language:</span> <span style={{ color: 'white' }}>{info.language}</span></p>
+            </div>
           </div>
         ]);
       } else {

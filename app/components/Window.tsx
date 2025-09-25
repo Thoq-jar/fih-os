@@ -1,4 +1,5 @@
 import React from 'react';
+import './Window.css';
 
 interface WindowProps {
   children: React.ReactNode;
@@ -6,14 +7,7 @@ interface WindowProps {
 
 const Window: React.FC<WindowProps> = ({ children }) => {
   return (
-    <div style={{
-      border: '1px solid white',
-      padding: '10px',
-      margin: '5px',
-      flex: 1,
-      backgroundColor: 'rgba(0, 0, 0, 0.5)',
-      backdropFilter: 'blur(10px)',
-    }}>
+    <div className="window">
       {children}
     </div>
   );

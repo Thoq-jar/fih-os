@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Window from './Window';
 import Terminal from './Terminal';
+import AppLauncher from './AppLauncher';
 
 const TilingWindowManager: React.FC = () => {
-  const [windows, setWindows] = useState<number[]>([1]);
+  const [windows, setWindows] = useState<number[]>([]);
+  const [isAppLauncherOpen, setIsAppLauncherOpen] = useState(false);
 
   const addWindow = () => {
     setWindows(prevWindows => [...prevWindows, prevWindows.length + 1]);
@@ -19,6 +21,9 @@ const TilingWindowManager: React.FC = () => {
         addWindow();
       } else if (event.ctrlKey && event.key === 'c') {
         removeWindow();
+      } else if (event.ctrlKey && event.code === 'Space') {
+        event.preventDefault();
+        setIsAppLauncherOpen(prev => !prev);
       }
     };
 
@@ -31,7 +36,8 @@ const TilingWindowManager: React.FC = () => {
 
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', height: '100vh' }}>
-      {windows.map(windowId => (
+      <AppLauncher isOpen={isAppLauncherOpen} onClose={() => setIsAppLauncherOpen(false)} />
+      {windows.map((windowId, index) => (
         <Window key={windowId}>
           <Terminal />
         </Window>
