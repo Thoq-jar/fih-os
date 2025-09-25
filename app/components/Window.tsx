@@ -8,7 +8,9 @@ interface WindowProps {
 const Window: React.FC<WindowProps> = ({ children }) => {
   return (
     <div className="window">
-      {children}
+      <div className="window-content">
+        {children}
+      </div>
     </div>
   );
 };

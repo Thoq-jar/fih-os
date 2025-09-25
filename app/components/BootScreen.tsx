@@ -15,7 +15,7 @@ export function BootScreen() {
 
   return (
     <div className="boot-screen">
-      <div className="shimmer">FIH-OS</div>
+      <div className="shimmer">FihOS</div>
     </div>
   );
 }
