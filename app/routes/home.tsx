@@ -1,13 +1,16 @@
-import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
-
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
-}
+import TilingWindowManager from '../components/TilingWindowManager';
 
 export default function Home() {
-  return <Welcome />;
+  return (
+    <div style={{
+      width: '100vw',
+      height: '100vh',
+      backgroundImage: `url('https://cataas.com/cat')`,
+      backgroundSize: 'cover',
+    }}>
+      <div style={{backgroundColor: 'rgba(0, 0, 0, 0.75)'}}>
+        <TilingWindowManager />
+      </div>
+    </div>
+  );
 }
